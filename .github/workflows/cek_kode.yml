@@ -1,0 +1,21 @@
+name: Satpam Pengecekan Kode
+
+on:
+    push:
+        branches: ["main"]
+
+jobs:
+    pekerjaan-test:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout kode
+              uses: actions/checkout@v3
+            
+            - name: Set up Python
+              uses: actions/setup-python@v4
+                with:
+                    python-version: '3.9'
+            
+            - name: Jalankan Unit Test
+            run: python test_bank.py
