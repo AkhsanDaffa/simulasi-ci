@@ -4,7 +4,7 @@ class BankAccount:
     
     def setor(self, jumlah):
         self.saldo += jumlah
-        print("Programmer A: Uang masuk bos!")
+        print("Terima kasih nasabah. Uang sudah masuk ke sistem.")
         return self.saldo
     
     def tarik(self, jumlah):
