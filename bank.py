@@ -11,3 +11,6 @@ class BankAccount:
             raise ValueError("Saldo tidak mencukupi")
         self.saldo -= jumlah
         return self.saldo
+    
+    def cek_saldo(self):
+        return self.saldo
