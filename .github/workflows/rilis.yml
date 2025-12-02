@@ -1,0 +1,30 @@
+name: Rilis Aplikasi
+
+on:
+    push:
+        tags:
+            - "v*"
+
+permissions:
+    contents: write
+
+jobs:
+    pekerjaan-test:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout kode
+              uses: actions/checkout@v3
+
+            - name: Bungkus ke ZIP
+              run: |
+                  zip -r aplikasi-bank.zip . -x ".git/*" ".github/*"
+                  ls -l aplikasi-bank.zip
+
+            - name: Buat Release di Github
+              uses: softprops/action-gh-release@v1
+              if: startsWith(github.ref, 'refs/tags/')
+              with:
+                  files: aplikasi-bank.zip
+                  draft: false
+                  prerelease: false
