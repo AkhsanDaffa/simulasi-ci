@@ -2,6 +2,10 @@ FROM python:3.9-slim
 
 WORKDIR /app
 
+COPY requirements.txt .
+
+RUN pip install -r requirements.txt
+
 COPY . .
 
-CMD ["python", "test_bank.py"]
+CMD ["python", "app.py"]
