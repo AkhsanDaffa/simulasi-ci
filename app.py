@@ -9,7 +9,7 @@ akun = BankAccount(1000)
 @app.route('/')
 def home():
     return """
-    <h1>Halo! Ini Aplikasi Bank Saya </h1>
+    <h1>Halo! Nasabah Prioritas! Versi Otomatis </h1>
     <p>Aplikasi ini berjalan di dalam Docker Container!</p>
     <p>Coba cek saldo di: <a href="/saldo">/saldo</a></p>
 """
